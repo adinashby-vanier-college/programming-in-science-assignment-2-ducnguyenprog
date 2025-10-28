@@ -1,7 +1,13 @@
 # Function 1: Lists - Finding the Maximum and Second Maximum in a List
 # This function takes a list of numbers as input and returns the maximum and second maximum values.
 def max_two_in_list(numbers):
-    return (0, 0)
+    numbers.sort()
+    
+    if len(numbers) == 0:
+        return(None, None)
+
+
+    return(max1, max2)
 
 # Function 2: Lists - Removing Duplicates and Sorting
 # This function takes a list of numbers and returns a sorted list with duplicates removed.
@@ -30,3 +36,5 @@ def dot_product(list1, list2):
 # This function takes two 2D lists (matrices) and returns their matrix product.
 def matrix_multiplication(matrix1, matrix2):
     return [[0, 0], [0, 0]]
+
+
