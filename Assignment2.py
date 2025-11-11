@@ -29,13 +29,12 @@ def remove_duplicates_and_sort(numbers):
 # Function 3: Single-Dimensional Arrays - Cumulative Sum
 # This function takes an array (list) of numbers and returns a new list where each element is the cumulative sum of the previous elements.
 def cumulative_sum(arr):
+    cumulative = [sum(arr[:i + 1]) for i in range(len(arr))]
 
-    return [sum(arr[:i + 1]) for i in range(len(arr))]
-
+    return cumulative
 # Function 4: Two-Dimensional Arrays - Matrix Transpose
 # This function takes a 2D list (matrix) and returns its transpose.
 def transpose_matrix(matrix):
-
     rows = len(matrix)
     columns = len(matrix[0])
 
@@ -49,12 +48,25 @@ def transpose_matrix(matrix):
 # Function 5: Slicing - Extracting Every Nth Element
 # This function takes a list and a step value N and returns every Nth element.
 def slice_every_nth(lst, step):
-    return []
+
+    if step <= 0:
+        return("Step value must be positive")
+    
+    return [lst[i] for i in range(0, len(lst), step)]
 
 # Function 6: Arithmetic Operations with Arrays - Dot Product
 # This function takes two lists of the same length and returns their dot product.
 def dot_product(list1, list2):
-    return 0
+
+    if len(list1) != len(list2):
+        return("The lists must be of equal length")
+    
+    result = 0
+
+    for i in range(len(list1)):
+        result += list1[i] * list2[i]
+
+    return result
 
 # Function 7: Arithmetic Operations with Arrays - Matrix Multiplication
 # This function takes two 2D lists (matrices) and returns their matrix product.
